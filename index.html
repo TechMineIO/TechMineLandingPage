@@ -63,7 +63,7 @@
                     <div class="col-lg-6">
                         <!-- Mashead text and app badges-->
                         <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1 class="display-1 lh-1 mb-3">Access Your Files Now</h1>
+                            <h1 class="display-1 lh-1 mb-3">Access Your Files Now.</h1>
                             <p class="lead fw-normal mb-5">Use your photos, videos, and documents instantly from anywhere!</p>
                             <div class="d-flex flex-column flex-lg-row align-items-center"></div>
                         </div>
@@ -176,7 +176,7 @@
                                         <div class="text-center">
                                             <i class="bi-speedometer2 icon-feature text-gradient d-block mb-3"></i>
                                             <h3 class="font-alt">Speed</h3>
-                                            <p class="text-muted mb-0">No waiting for cloud uploads, access files instantly.</p>
+                                            <p class="text-muted mb-0">Don't wait for cloud uploads, access files instantly.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-5">
@@ -184,7 +184,7 @@
                                         <div class="text-center">
                                             <i class="bi-file-earmark-lock icon-feature text-gradient d-block mb-3"></i>
                                             <h3 class="font-alt">Privacy</h3>
-                                            <p class="text-muted mb-0">Your file are yours. All files are securely transferred and no files are stored on our servers.</p>
+                                            <p class="text-muted mb-0">Your files are yours. All files are securely transferred and no files are stored on our servers.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +197,7 @@
                                             <p class="text-muted mb-0">Use the full storage available to your devices without worrying about cloud limits.</p>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-5">
                                         <!-- Feature item-->
                                         <div class="text-center">
                                             <i class="bi-browser-chrome icon-feature text-gradient d-block mb-3"></i>
@@ -324,20 +324,20 @@
                 <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
                     <div class="col-12 col-lg-5">
                         <article>
-                            <h2 class="display-4 lh-1 mb-4">Never wonder how to view or send a file again</h2>
-                            <h3 class="lead fw-normal mb-5 mb-lg-0">Left an important document on your computer at home?</h3>
+                            <h2 class="display-4 lh-1 mb-4">Where can we help?</h2>
+                            <h3 class="font-alt lead fw-normal mb-5 mb-lg-0">Left an important document on your computer at home?</h3>
                             <p class="fw-normal mb-5 mb-lg-0">TechMine lets you view, edit, and download that important document from anywhere.</p>
                             <br />
-                            <h3 class="lead fw-normal mb-5 mb-lg-0">Trying to send a video but the file is too big?</h3>
+                            <h3 class="font-alt lead fw-normal mb-5 mb-lg-0">Trying to send a video but the file is too big?</h3>
                             <p class="fw-normal mb-5 mb-lg-0">TechMine lets you start watching any sized video instantly.</p>
                             <br />
-                            <h3 class="lead fw-normal mb-5 mb-lg-0">Images look pixelated when texting them to your family?</h3>
+                            <h3 class="font-alt lead fw-normal mb-5 mb-lg-0">Images look pixelated when texting them to your family?</h3>
                             <p class="fw-normal mb-5 mb-lg-0">TechMine lets you send images without quality loss.</p>
                             <br />
-                            <h3 class="lead fw-normal mb-5 mb-lg-0">Want to use a file that we don't have a preview for?</h3>
+                            <h3 class="font-alt lead fw-normal mb-5 mb-lg-0">Want to use a file that we don't have a preview for?</h3>
                             <p class="fw-normal mb-5 mb-lg-0">TechMine lets you open any of your files in your favorite app.</p>
                             <br />
-                            <h3 class="lead fw-normal mb-5 mb-lg-0">Need to securely send a private file?</h3>
+                            <h3 class="font-alt lead fw-normal mb-5 mb-lg-0">Need to securely send a private file?</h3>
                             <p class="fw-normal mb-5 mb-lg-0">TechMine uses end-to-end encryption and device verification to ensure only authorized devices have access to your files.</p>
                         </article>
                     </div>
@@ -602,12 +602,19 @@
                 }
             });
             window.addEventListener('DOMContentLoaded', (event) => {
-                // Activate Bootstrap scrollspy on the main nav element
-                const mainNav = document.body.querySelector('#mainNav');
-                if (mainNav) {
-                    new bootstrap.ScrollSpy(document.body, {
-                        target: '#mainNav',
-                        offset: 74,
+                var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
+                if ('IntersectionObserver' in window) {
+                    let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                lazyBackgroundObserver.unobserve(entry.target);
+                            }
+                        });
+                    });
+
+                    lazyBackgrounds.forEach(function (lazyBackground) {
+                        lazyBackgroundObserver.observe(lazyBackground);
                     });
                 }
 
@@ -622,20 +629,12 @@
                     });
                 });
 
-                var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
-
-                if ('IntersectionObserver' in window) {
-                    let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
-                        entries.forEach(function (entry) {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('visible');
-                                lazyBackgroundObserver.unobserve(entry.target);
-                            }
-                        });
-                    });
-
-                    lazyBackgrounds.forEach(function (lazyBackground) {
-                        lazyBackgroundObserver.observe(lazyBackground);
+                // Activate Bootstrap scrollspy on the main nav element
+                const mainNav = document.body.querySelector('#mainNav');
+                if (mainNav) {
+                    new bootstrap.ScrollSpy(document.body, {
+                        target: '#mainNav',
+                        offset: 74,
                     });
                 }
             });

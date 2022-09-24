@@ -310,12 +310,19 @@
                             }
                         });
                         window.addEventListener('DOMContentLoaded', (event) => {
-                            // Activate Bootstrap scrollspy on the main nav element
-                            const mainNav = document.body.querySelector('#mainNav');
-                            if (mainNav) {
-                                new bootstrap.ScrollSpy(document.body, {
-                                    target: '#mainNav',
-                                    offset: 74,
+                            var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
+                            if ('IntersectionObserver' in window) {
+                                let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                                    entries.forEach(function (entry) {
+                                        if (entry.isIntersecting) {
+                                            entry.target.classList.add('visible');
+                                            lazyBackgroundObserver.unobserve(entry.target);
+                                        }
+                                    });
+                                });
+
+                                lazyBackgrounds.forEach(function (lazyBackground) {
+                                    lazyBackgroundObserver.observe(lazyBackground);
                                 });
                             }
 
@@ -330,20 +337,12 @@
                                 });
                             });
 
-                            var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
-
-                            if ('IntersectionObserver' in window) {
-                                let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
-                                    entries.forEach(function (entry) {
-                                        if (entry.isIntersecting) {
-                                            entry.target.classList.add('visible');
-                                            lazyBackgroundObserver.unobserve(entry.target);
-                                        }
-                                    });
-                                });
-
-                                lazyBackgrounds.forEach(function (lazyBackground) {
-                                    lazyBackgroundObserver.observe(lazyBackground);
+                            // Activate Bootstrap scrollspy on the main nav element
+                            const mainNav = document.body.querySelector('#mainNav');
+                            if (mainNav) {
+                                new bootstrap.ScrollSpy(document.body, {
+                                    target: '#mainNav',
+                                    offset: 74,
                                 });
                             }
                         });
