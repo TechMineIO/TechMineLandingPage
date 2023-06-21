@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Pricing for TechMine" />
+        <meta name="author" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.techmine.io/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="TechMine" />
+        <meta property="og:title" content="TechMine Pricing" />
+        <meta property="og:description" content="Pricing for TechMine" />
+        <meta property="og:image" content="https://www.techmine.io/img/TechMine_Banner.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@TechMineIO" />
+        <meta name="twitter:creator" content="@TechMineIO" />
+        <meta name="twitter:title" content="TechMine Pricing" />
+        <meta name="twitter:description" content="Pricing for TechMine" />
+        <meta name="twitter:image" content="https://www.techmine.io/img/TechMine_Banner.png" />
+        <title>TechMine Pricing</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/img/TechMine.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.min.css" rel="stylesheet" />
+    </head>
+    <body style="background-color: #f8f9fa">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="/#page-top">
+                    <img src="/img/TechMineLogo_Color.svg" height="60" width="60" style="margin-top: -35px; margin-bottom: -35px" alt="TM" loading="lazy" />
+                    <span style="font-size: 0">
+                        <span style="font-size: 1.25rem">Tech</span>
+                        <span style="font-size: 1.25rem; color: #2937f0">Mine</span>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border: none; font-size: 32px; box-shadow: none"><i class="bi-list"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="/downloads">Downloads</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="/pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="/contact">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="https://youtu.be/yYzCuxgX6WQ" target="_blank">Watch Demo</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="https://app.techmine.io">Log In</a></li>
+                    </ul>
+                    <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                        <span class="d-flex align-items-center">
+                            <!--i.bi-chat-text-fill.me-2-->
+                            <span class="small">Sign Up</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead">
+            <div class="container px-m-5">
+                <!-- Pricing section-->
+                <section class="py-5 border-bottom">
+                    <div class="container px-5 my-5">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bolder">Flexible options</h2>
+                            <p class="lead mb-0">With our no hassle pricing plans</p>
+                        </div>
+                        <div class="form-check d-inline-block" style="margin-right: 24px; cursor: pointer">
+                            <input class="form-check-input d-inline" id="billedMonthly" type="radio" name="billing" onclick="loadOffers(false)" style="cursor: pointer" />
+                            <label class="form-check-label" for="billedMonthly" style="cursor: pointer">Billed monthly</label>
+                        </div>
+                        <div class="form-check d-inline-block" style="margin-bottom: 24px; cursor: pointer">
+                            <input class="form-check-input" id="billedYearly" type="radio" name="billing" checked="true" onclick="loadOffers(true)" style="cursor: pointer" />
+                            <label class="form-check-label" for="billedYearly" style="cursor: pointer">Billed yearly</label>
+                        </div>
+                        <div class="row gx-5 justify-content-center" id="pricing"></div>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container-fluid px-5">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="container px-5"><div class="text-white-50 small mb-1">&copy; TechMine, LLC 2023. All Rights Reserved.</div></div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="container px-5 mb-1">
+                            <div class="text-white-50 small">
+                                <a href="/privacy">Privacy</a>
+                                <span class="mx-1">&middot;</span>
+                                <a href="/terms">Terms</a>
+                                <span class="mx-1">&middot;</span>
+                                <a href="/faq">FAQ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="container px-5">
+                            <div class="text-white-50 small">
+                                <span class="mx-1 d-lg-inline d-none">follow us on:</span>
+                                <a class="mx-1" href="https://www.facebook.com/profile.php?id=100085622987447" target="_blank" aria-label="facebook"><i class="footer-social-icon bi-facebook"></i></a>
+                                <a class="mx-1" href="https://twitter.com/TechMineIO" target="_blank" aria-label="twitter"><i class="footer-social-icon bi-twitter"></i></a>
+                                <a class="mx-1" href="https://www.youtube.com/channel/UCZgj_JefaCkz1wNoWnpDOuQ" target="_blank" aria-label="youtube"><i class="footer-social-icon bi-youtube"></i></a>
+                                <a class="mx-1" href="https://www.linkedin.com/company/techmine-io" target="_blank" aria-label="linkedin"><i class="footer-social-icon bi-linkedin"></i></a>
+                                <a class="mx-1" href="https://www.reddit.com/r/TechMine" target="_blank" aria-label="reddit"><i class="footer-social-icon bi-reddit"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Feedback Modal-->
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                        <h4 class="modal-title font-alt text-white" id="feedbackModalLabel">Sign Up</h4>
+                        <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0 p-4">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="needs-validation" id="betaForm">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="Name" required="true" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" name="Email" required="true" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback">Email exists or is invalid</div>
+                            </div>
+                            <!-- Password-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="password" type="password" placeholder="Password" name="Password" required="true" />
+                                <label for="password">Password</label>
+                                <div class="invalid-feedback">Password must be at least 6 characters long and contain an uppercase character, lowercase character, a digit, and a symbol</div>
+                            </div>
+                            <!-- Plan-->
+                            <div class="form-floating mb-3 d-none">
+                                <select class="form-select" id="plans" aria-label="Default select example" name="Plan" required="true"></select>
+                                <label for="plan">Plan</label>
+                            </div>
+                            <div class="text-center text-muted small mb-3 d-none"><a href="/pricing" target="_blank">Compare Plans</a></div>
+                            <!-- Billing Frequency-->
+                            <div class="form-floating mb-3 d-none">
+                                <select class="form-select" id="plans" aria-label="Default select example" name="Billing" required="true">
+                                    <option id="monthlyOpt" value="Monthly">Monthly</option>
+                                    <option id="yearlyOpt" value="Yearly" selected="true">Yearly</option>
+                                </select>
+                                <label for="plan">Billing Frequency</label>
+                            </div>
+                            <div class="mb-3" id="captcha"></div>
+                            <div class="text-muted small mb-3">
+                                By selecting "Agree and Begin Free Trial" I agree to the
+                                <a href="/terms" target="_blank">TechMine Terms.</a>
+                                Learn about how we use and protect your data in our
+                                <a href="/privacy" target="_blank">Privacy Policy.</a>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="betaFormSubmitSuccessMessage">
+                                <div class="text-center mb-3"><div class="fw-bolder">Please check your email. Thank you!</div></div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="betaFormSubmitErrorMessage"><div class="text-center text-danger mb-3">Error, please review the information and retry</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg" id="betaFormSubmitButton" type="submit">Agree and Begin Free Trial</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function handleSubmit(id, url, event) {
+                event.preventDefault();
+
+                document.getElementById(id + 'SubmitSuccessMessage').classList.add('d-none');
+                document.getElementById(id + 'SubmitErrorMessage').classList.add('d-none');
+                document.getElementById(id + 'SubmitButton').disabled = true;
+
+                const data = new FormData(event.target);
+
+                const value = Object.fromEntries(data.entries());
+
+                value.topics = data.getAll('topics');
+
+                let xhr = new XMLHttpRequest();
+                //let url = "https://app.techmine.io/api/IAuthApi/BetaRegistration";
+
+                // open a connection
+                xhr.open('POST', url, true);
+
+                // Set the request header i.e. which type of content you are sending
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+                // Create a state change callback
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        // Print received data from server
+                        console.log(this.responseText);
+                        if (xhr.status === 200 && this.responseText == 'true') {
+                            document.getElementById(id + 'SubmitSuccessMessage').classList.remove('d-none');
+                            document.getElementById(id + 'SubmitButton').classList.add('d-none');
+                        } else if (xhr.status === 200 && this.responseText.length > 5) {
+                            let key = this.responseText.substring(1, this.responseText.length - 1);
+                            window.location = 'https://app.techmine.io/#/Login' + key;
+                        } else {
+                            document.getElementById(id + 'SubmitErrorMessage').classList.remove('d-none');
+                            document.getElementById(id + 'SubmitButton').disabled = false;
+                        }
+                    }
+                };
+
+                // Converting JSON data to string
+                var strData = JSON.stringify([value]);
+
+                // Sending data with the request
+                xhr.send(strData);
+
+                //console.log(value);
+            }
+            const betaForm = document.querySelector('#betaForm');
+
+            function betaFormSubmit(event) {
+                event.preventDefault();
+                if (betaForm.querySelectorAll('.is-invalid').length == 0) {
+                    handleSubmit('betaForm', 'https://app.techmine.io/api/Register', event);
+                }
+            }
+
+            betaForm.addEventListener('submit', betaFormSubmit);
+            let pass = document.getElementById('password');
+            pass.addEventListener('blur', function () {
+                var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+                if (re.test(pass.value)) {
+                    pass.classList.remove('is-invalid');
+                } else {
+                    pass.classList.add('is-invalid');
+                }
+            });
+            let email = document.getElementById('email');
+            email.addEventListener('blur', function () {
+                let xhr = new XMLHttpRequest();
+                //let url = "https://app.techmine.io/api/IAuthApi/BetaRegistration";
+
+                // open a connection
+                xhr.open('POST', 'https://app.techmine.io/api/EmailExists', true);
+
+                // Set the request header i.e. which type of content you are sending
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+                // Create a state change callback
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        // Print received data from server
+                        console.log(this.responseText);
+                        if (xhr.status === 200 && this.responseText == 'true') {
+                            email.classList.add('is-invalid');
+                        } else {
+                            email.classList.remove('is-invalid');
+                        }
+                    }
+                };
+
+                // Converting JSON data to string
+                var strData = JSON.stringify([email.value]);
+
+                // Sending data with the request
+                xhr.send(strData);
+            });
+        </script>
+        <script defer src="/js/bootstrap.bundle.min.js"></script>
+        <script defer src="/js/gtag.js"></script>
+        <script>
+            var isContactPage = typeof isContactPage !== 'undefined';
+            //console.log(isContactPage);
+            function onloadCallback() {
+                grecaptcha.render('captcha', { sitekey: '6LdpkwAiAAAAAPM6UHnBXOErGZLKRfYBRguTapA6', theme: 'light' });
+                if (isContactPage) {
+                    grecaptcha.render('captchaContact', { sitekey: '6LdpkwAiAAAAAPM6UHnBXOErGZLKRfYBRguTapA6', theme: 'light' });
+                }
+            }
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-213WP915X0');
+
+            var firstOpen = true;
+            function loadCaptcha() {
+                firstOpen = false;
+                var script = document.createElement('script');
+                script.setAttribute('type', 'text/javascript');
+                script.async = true;
+                script.defer = true;
+                script.setAttribute('src', 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit');
+                document.getElementsByTagName('head')[0].appendChild(script);
+            }
+            function setModal() {
+                var searchParams = new URLSearchParams(window.location.search);
+
+                let plan = searchParams.get('plan');
+                let billing = searchParams.get('billing');
+                let planOpt = document.getElementById(plan + 'Opt');
+                if (planOpt) {
+                    planOpt.selected = true;
+                }
+                let billingOpt = document.getElementById(billing + 'Opt');
+                if (billingOpt) {
+                    billingOpt.selected = true;
+                }
+            }
+
+            //- function bootstrapLoaded(){
+            //-     // Activate Bootstrap scrollspy on the main nav element
+            //-     const mainNav = document.body.querySelector('#mainNav');
+            //-     if (mainNav) {
+            //-         new bootstrap.ScrollSpy(document.body, {
+            //-             target: '#mainNav',
+            //-             offset: 74,
+            //-         });
+            //-     };
+            //- }
+
+            document.getElementById('feedbackModal').addEventListener('shown.bs.modal', function () {
+                if (firstOpen) {
+                    loadCaptcha();
+                    fetch('https://app.techmine.io/api/Offers')
+                        .then((response) => response.json())
+                        .then((data) => {
+                            let offers = data.sort(function (a, b) {
+                                return a.DisplayOrder > b.DisplayOrder ? 1 : -1;
+                            });
+                            let plans = document.getElementById('plans');
+                            plans.innerHTML = '';
+                            for (var i = 0; i < offers.length; i++) {
+                                let offer = offers[i];
+                                if (!offer.ContactRequired) plans.innerHTML += '<option id="' + offer.Name + 'Opt" ' + (offer.Highlighted ? 'selected' : '') + ' value="' + offer.Id + '">' + offer.Name + '</option>';
+                            }
+                            setModal();
+                        });
+                } else {
+                    setModal();
+                }
+            });
+            window.addEventListener('DOMContentLoaded', (event) => {
+                var searchParams = new URLSearchParams(window.location.search);
+                let action = searchParams.get('action');
+                if (action == 'SignUp') {
+                    console.log('Show modal');
+                    new bootstrap.Modal(document.getElementById('feedbackModal')).show();
+                }
+
+                var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
+                if ('IntersectionObserver' in window) {
+                    let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                lazyBackgroundObserver.unobserve(entry.target);
+                            }
+                        });
+                    });
+
+                    lazyBackgrounds.forEach(function (lazyBackground) {
+                        lazyBackgroundObserver.observe(lazyBackground);
+                    });
+                }
+
+                if (isContactPage) {
+                    loadCaptcha();
+                }
+
+                // Collapse responsive navbar when toggler is visible
+                const navbarToggler = document.body.querySelector('.navbar-toggler');
+                const responsiveNavItems = [].slice.call(document.querySelectorAll('#navbarResponsive .nav-link'));
+                responsiveNavItems.map(function (responsiveNavItem) {
+                    responsiveNavItem.addEventListener('click', () => {
+                        if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                            navbarToggler.click();
+                        }
+                    });
+                });
+
+                // Activate Bootstrap scrollspy on the main nav element
+                const mainNav = document.body.querySelector('#mainNav');
+                if (mainNav) {
+                    new bootstrap.ScrollSpy(document.body, {
+                        target: '#mainNav',
+                        offset: 74,
+                    });
+                }
+            });
+        </script>
+        <script>
+            function setPlanAndBilling(plan, isYearly) {
+                var searchParams = new URLSearchParams(window.location.search);
+                searchParams.set('plan', plan);
+                searchParams.set('billing', isYearly ? 'yearly' : 'monthly');
+                var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+                history.pushState(null, '', newRelativePathQuery);
+            }
+            function loadOffers(yearlyPricing) {
+                fetch('https://app.techmine.io/api/Offers')
+                    .then((response) => response.json())
+                    .then((data) => {
+                        let offers = data.sort(function (a, b) {
+                            return a.DisplayOrder > b.DisplayOrder ? 1 : -1;
+                        });
+                        let pricing = document.getElementById('pricing');
+                        pricing.innerHTML = '';
+                        for (var i = 0; i < offers.length; i++) {
+                            let offer = offers[i];
+                            let computedPrice = offer.Price - (yearlyPricing ? offer.AnnualDiscount ?? 0 : 0);
+                            let template =
+                                '<div class="col-lg-6 col-xl-4">' +
+                                '    <div class="card mb-5 mb-xl-0">' +
+                                '        <div class="card-body p-m-5">' +
+                                '            <div class="small text-uppercase fw-bold">' +
+                                (offer.Highlighted ? '<i class="bi bi-star-fill text-warning"></i> ' : '') +
+                                offer.Name +
+                                '</div>' +
+                                '            <div class="mb-3">' +
+                                (offer.ContactRequired ? '<div><span class="display-6" style="color:transparent">_</span></div>' + '                <span class="display-4 fw-bold">Contact</span>' : '<div><s class="display-6">$' + (computedPrice + 2 * (offer.AnnualDiscount ?? 1)) + '</s></div>' + '                <span class="display-4 fw-bold">$' + computedPrice.toFixed(2) + '</span>' + '                <span class="text-muted">  / mo.</span>') +
+                                '            </div>' +
+                                '            <ul class="list-unstyled mb-4">' +
+                                '                <li class="mb-2">' +
+                                '                    <i class="bi bi-check text-primary"></i>' +
+                                '                    Unlimited bandwidth' +
+                                '                </li>' +
+                                '                <li class="mb-2">' +
+                                '                    <i class="bi bi-check text-primary"></i>' +
+                                '                    No storage limit' +
+                                '                </li>' +
+                                '                <li class="mb-2">' +
+                                '                    <i class="bi bi-check text-primary"></i>' +
+                                '                    Web access' +
+                                '                </li>' +
+                                '                <li class="mb-2 ' +
+                                (offer.ShareLimit == 'Unlimited shares' ? '' : 'text-muted') +
+                                '">' +
+                                '                    <i class="bi ' +
+                                (offer.ShareLimit == 'Unlimited shares' ? 'bi-check text-primary' : 'bi-x') +
+                                '"></i>' +
+                                '                    ' +
+                                offer.ShareLimit +
+                                '                </li>' +
+                                '                <li class="mb-2 ' +
+                                (offer.DeviceLimit == null ? '' : 'text-muted') +
+                                '">' +
+                                '                    <i class="bi ' +
+                                (offer.DeviceLimit == null ? 'bi-check text-primary' : 'bi-x') +
+                                '"></i>' +
+                                '                    ' +
+                                (offer.DeviceLimit ?? 'Unlimited') +
+                                ' devices' +
+                                '                </li>' +
+                                '                <li class="mb-2 ' +
+                                (offer.UserLimit == null ? '' : 'text-muted') +
+                                '">' +
+                                '                    <i class="bi ' +
+                                (offer.UserLimit == null ? 'bi-check text-primary' : 'bi-x') +
+                                '"></i>' +
+                                '                    ' +
+                                (offer.UserLimit ?? 'Unlimited') +
+                                ' user' +
+                                (offer.UserLimit == 1 ? '' : 's') +
+                                '                </li>' +
+                                '            </ul>' +
+                                (offer.ContactRequired ? '            <div class="d-grid"><a href="/contact" class="btn btn' + (offer.Highlighted ? '' : '-outline') + '-primary" >Contact Us</a></div>' : '            <div class="d-grid"><button onclick="setPlanAndBilling(\'' + offer.Name + "'," + yearlyPricing + ')" class="btn btn' + (offer.Highlighted ? '' : '-outline') + '-primary" data-bs-toggle="modal" data-bs-target="#feedbackModal">Try For Free</button></div>') +
+                                '        </div>' +
+                                '    </div>' +
+                                '</div>';
+                            //console.log(template)
+                            pricing.innerHTML += template;
+                        }
+                    });
+            }
+            loadOffers(document.getElementById('billedYearly').checked);
+        </script>
+    </body>
+</html>

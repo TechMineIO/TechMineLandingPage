@@ -8,32 +8,37 @@
 
 <url>
   <loc>https://www.techmine.io/</loc>
-  <lastmod>2022-10-20T20:55:18+00:00</lastmod>
+  <lastmod>2023-06-20T20:55:18+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.techmine.io/downloads.html</loc>
-  <lastmod>2022-10-20T20:55:17+00:00</lastmod>
+  <loc>https://www.techmine.io/downloads/</loc>
+  <lastmod>2023-06-20T20:55:17+00:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://www.techmine.io/contact.html</loc>
-  <lastmod>2022-10-20T20:55:17+00:00</lastmod>
+  <loc>https://www.techmine.io/pricing/</loc>
+  <lastmod>2023-06-20T20:55:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.techmine.io/privacy.html</loc>
-  <lastmod>2022-10-20T20:55:18+00:00</lastmod>
+  <loc>https://www.techmine.io/contact/</loc>
+  <lastmod>2023-06-20T20:55:17+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://www.techmine.io/terms.html</loc>
-  <lastmod>2022-10-20T20:55:18+00:00</lastmod>
-  <priority>0.70</priority>
+  <loc>https://www.techmine.io/privacy/</loc>
+  <lastmod>2023-06-20T20:55:18+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
 <url>
-  <loc>https://www.techmine.io/faq.html</loc>
-  <lastmod>2022-10-20T20:55:17+00:00</lastmod>
+  <loc>https://www.techmine.io/terms/</loc>
+  <lastmod>2023-06-20T20:55:18+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://www.techmine.io/faq/</loc>
+  <lastmod>2023-06-20T20:55:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 

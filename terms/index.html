@@ -29,7 +29,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="preload" as="style" onload='this.onload=null;this.rel="stylesheet"' />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.min.css" rel="stylesheet" />
+        <link href="/css/styles.min.css" rel="stylesheet" />
     </head>
     <body>
         <div id="content-wrap">
@@ -47,15 +47,16 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border: none; font-size: 32px; box-shadow: none"><i class="bi-list"></i></button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                            <li class="nav-item"><a class="nav-link me-lg-3" href="/downloads.html">Downloads</a></li>
-                            <li class="nav-item"><a class="nav-link me-lg-3" href="/contact.html">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="/downloads">Downloads</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="/pricing">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="/contact">Contact Us</a></li>
                             <li class="nav-item"><a class="nav-link me-lg-3" href="https://youtu.be/yYzCuxgX6WQ" target="_blank">Watch Demo</a></li>
-                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://app.techmine.io">Go To App</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://app.techmine.io">Log In</a></li>
                         </ul>
                         <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
                             <span class="d-flex align-items-center">
                                 <!--i.bi-chat-text-fill.me-2-->
-                                <span class="small">Get the Beta</span>
+                                <span class="small">Sign Up</span>
                             </span>
                         </button>
                     </div>
@@ -108,8 +109,8 @@
                         <p dir="auto">
                             For information about how we collect and use information about users of the Service, please check out our privacy policy available at
                             <strong>
-                                <a href="/privacy.html"></a>
-                                https://techmine.io/privacy.html
+                                <a href="/privacy"></a>
+                                https://techmine.io/privacy
                             </strong>
                             .
                         </p>
@@ -264,16 +265,16 @@
             <div class="container-fluid px-5">
                 <div class="row">
                     <div class="col-xl-4">
-                        <div class="container px-5"><div class="text-white-50 small mb-1">&copy; TechMine, LLC 2022. All Rights Reserved.</div></div>
+                        <div class="container px-5"><div class="text-white-50 small mb-1">&copy; TechMine, LLC 2023. All Rights Reserved.</div></div>
                     </div>
                     <div class="col-xl-4">
                         <div class="container px-5 mb-1">
                             <div class="text-white-50 small">
-                                <a href="/privacy.html">Privacy</a>
+                                <a href="/privacy">Privacy</a>
                                 <span class="mx-1">&middot;</span>
-                                <a href="/terms.html">Terms</a>
+                                <a href="/terms">Terms</a>
                                 <span class="mx-1">&middot;</span>
-                                <a href="/faq.html">FAQ</a>
+                                <a href="/faq">FAQ</a>
                             </div>
                         </div>
                     </div>
@@ -308,19 +309,46 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="betaForm">
+                        <form class="needs-validation" id="betaForm">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="Name" />
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="Name" required="true" />
                                 <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <div class="invalid-feedback">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" name="Email" />
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" name="Email" required="true" />
                                 <label for="email">Email address</label>
+                                <div class="invalid-feedback">Email exists or is invalid</div>
+                            </div>
+                            <!-- Password-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="password" type="password" placeholder="Password" name="Password" required="true" />
+                                <label for="password">Password</label>
+                                <div class="invalid-feedback">Password must be at least 6 characters long and contain an uppercase character, lowercase character, a digit, and a symbol</div>
+                            </div>
+                            <!-- Plan-->
+                            <div class="form-floating mb-3 d-none">
+                                <select class="form-select" id="plans" aria-label="Default select example" name="Plan" required="true"></select>
+                                <label for="plan">Plan</label>
+                            </div>
+                            <div class="text-center text-muted small mb-3 d-none"><a href="/pricing" target="_blank">Compare Plans</a></div>
+                            <!-- Billing Frequency-->
+                            <div class="form-floating mb-3 d-none">
+                                <select class="form-select" id="plans" aria-label="Default select example" name="Billing" required="true">
+                                    <option id="monthlyOpt" value="Monthly">Monthly</option>
+                                    <option id="yearlyOpt" value="Yearly" selected="true">Yearly</option>
+                                </select>
+                                <label for="plan">Billing Frequency</label>
                             </div>
                             <div class="mb-3" id="captcha"></div>
+                            <div class="text-muted small mb-3">
+                                By selecting "Agree and Begin Free Trial" I agree to the
+                                <a href="/terms" target="_blank">TechMine Terms.</a>
+                                Learn about how we use and protect your data in our
+                                <a href="/privacy" target="_blank">Privacy Policy.</a>
+                            </div>
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -334,7 +362,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="betaFormSubmitErrorMessage"><div class="text-center text-danger mb-3">Error, please review the information and retry</div></div>
                             <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg" id="betaFormSubmitButton" type="submit">Apply</button></div>
+                            <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg" id="betaFormSubmitButton" type="submit">Agree and Begin Free Trial</button></div>
                         </form>
                     </div>
                 </div>
@@ -371,6 +399,9 @@
                         if (xhr.status === 200 && this.responseText == 'true') {
                             document.getElementById(id + 'SubmitSuccessMessage').classList.remove('d-none');
                             document.getElementById(id + 'SubmitButton').classList.add('d-none');
+                        } else if (xhr.status === 200 && this.responseText.length > 5) {
+                            let key = this.responseText.substring(1, this.responseText.length - 1);
+                            window.location = 'https://app.techmine.io/#/Login' + key;
                         } else {
                             document.getElementById(id + 'SubmitErrorMessage').classList.remove('d-none');
                             document.getElementById(id + 'SubmitButton').disabled = false;
@@ -386,13 +417,55 @@
 
                 //console.log(value);
             }
+            const betaForm = document.querySelector('#betaForm');
 
             function betaFormSubmit(event) {
-                handleSubmit('betaForm', 'https://app.techmine.io/api/BetaRegistration', event);
+                event.preventDefault();
+                if (betaForm.querySelectorAll('.is-invalid').length == 0) {
+                    handleSubmit('betaForm', 'https://app.techmine.io/api/Register', event);
+                }
             }
 
-            const betaForm = document.querySelector('#betaForm');
             betaForm.addEventListener('submit', betaFormSubmit);
+            let pass = document.getElementById('password');
+            pass.addEventListener('blur', function () {
+                var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+                if (re.test(pass.value)) {
+                    pass.classList.remove('is-invalid');
+                } else {
+                    pass.classList.add('is-invalid');
+                }
+            });
+            let email = document.getElementById('email');
+            email.addEventListener('blur', function () {
+                let xhr = new XMLHttpRequest();
+                //let url = "https://app.techmine.io/api/IAuthApi/BetaRegistration";
+
+                // open a connection
+                xhr.open('POST', 'https://app.techmine.io/api/EmailExists', true);
+
+                // Set the request header i.e. which type of content you are sending
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+                // Create a state change callback
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        // Print received data from server
+                        console.log(this.responseText);
+                        if (xhr.status === 200 && this.responseText == 'true') {
+                            email.classList.add('is-invalid');
+                        } else {
+                            email.classList.remove('is-invalid');
+                        }
+                    }
+                };
+
+                // Converting JSON data to string
+                var strData = JSON.stringify([email.value]);
+
+                // Sending data with the request
+                xhr.send(strData);
+            });
         </script>
         <script defer src="/js/bootstrap.bundle.min.js"></script>
         <script defer src="/js/gtag.js"></script>
@@ -422,6 +495,20 @@
                 script.setAttribute('src', 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit');
                 document.getElementsByTagName('head')[0].appendChild(script);
             }
+            function setModal() {
+                var searchParams = new URLSearchParams(window.location.search);
+
+                let plan = searchParams.get('plan');
+                let billing = searchParams.get('billing');
+                let planOpt = document.getElementById(plan + 'Opt');
+                if (planOpt) {
+                    planOpt.selected = true;
+                }
+                let billingOpt = document.getElementById(billing + 'Opt');
+                if (billingOpt) {
+                    billingOpt.selected = true;
+                }
+            }
 
             //- function bootstrapLoaded(){
             //-     // Activate Bootstrap scrollspy on the main nav element
@@ -437,9 +524,32 @@
             document.getElementById('feedbackModal').addEventListener('shown.bs.modal', function () {
                 if (firstOpen) {
                     loadCaptcha();
+                    fetch('https://app.techmine.io/api/Offers')
+                        .then((response) => response.json())
+                        .then((data) => {
+                            let offers = data.sort(function (a, b) {
+                                return a.DisplayOrder > b.DisplayOrder ? 1 : -1;
+                            });
+                            let plans = document.getElementById('plans');
+                            plans.innerHTML = '';
+                            for (var i = 0; i < offers.length; i++) {
+                                let offer = offers[i];
+                                if (!offer.ContactRequired) plans.innerHTML += '<option id="' + offer.Name + 'Opt" ' + (offer.Highlighted ? 'selected' : '') + ' value="' + offer.Id + '">' + offer.Name + '</option>';
+                            }
+                            setModal();
+                        });
+                } else {
+                    setModal();
                 }
             });
             window.addEventListener('DOMContentLoaded', (event) => {
+                var searchParams = new URLSearchParams(window.location.search);
+                let action = searchParams.get('action');
+                if (action == 'SignUp') {
+                    console.log('Show modal');
+                    new bootstrap.Modal(document.getElementById('feedbackModal')).show();
+                }
+
                 var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
                 if ('IntersectionObserver' in window) {
                     let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
